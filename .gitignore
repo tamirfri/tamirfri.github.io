@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Heavy non-minified JS files
+*.js
+!*.min.js
