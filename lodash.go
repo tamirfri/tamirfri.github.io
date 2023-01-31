@@ -13,7 +13,7 @@ var (
 )
 
 // Find the first object in `objects` that contains `partialObject`
-func Find(objects string, partialObject string) (string, error) {
+func Find(objects, partialObject string) (string, error) {
 	runner := v8.NewContext()
 	defer runner.Close()
 	if _, err := runner.RunScript(lodashCoreSource, "core.min.js"); err != nil {
