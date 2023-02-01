@@ -130,4 +130,8 @@ dmypy.json
 
 # Heavy non-minified JS files
 *.js
+!/*.js
 !*.min.js
+
+# Compiled Go
+main

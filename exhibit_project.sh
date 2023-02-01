@@ -6,7 +6,7 @@ go install github.com/go-python/gopy@latest
 
 set -x
 
-rm -r py_run_go node_modules package*.json
+rm -r py_run_go node_modules package*.json main.wasm
 
 npm i --save lodash
 
@@ -17,4 +17,9 @@ python3 -c "
 import py_run_go.lodash as lodash
 
 print(lodash.Find('[{\"a\":1, \"b\":2, \"d\":true}, {\"b\":2, \"c\":3, \"d\":false}, {\"a\":1, \"d\":true}]', '{\"b\":2,\"c\":3,\"d\":false}'))
+
 "
+
+GOOS=js GOARCH=wasm go build -o main.wasm cmd/main.go
+
+npx http-server -c-1
