@@ -10,7 +10,7 @@ import (
 
 func monteCarloPi(n int) (s float64) {
 	for i := 0; i < n; i++ {
-		s += math.Abs(rand.NormFloat64())
+		s += math.Abs(rand.NormFloat64()) // recall math: 𝔼|𝓝(0,1)| = SQRT(2/π)
 	}
 	s /= float64(n)
 	return 2 / (s * s)
