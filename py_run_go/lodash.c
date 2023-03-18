@@ -2006,14 +2006,14 @@ _wrap__lodash_lodash_Find(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, Py
 {
     PyObject *py_retval;
     char *retval;
-    char *objects;
-    char *partialObject;
-    const char *keywords[] = {"objects", "partialObject", NULL};
+    char *objectListJSON;
+    char *subObjectJSON;
+    const char *keywords[] = {"objectListJSON", "subObjectJSON", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "ss", (char **) keywords, &objects, &partialObject)) {
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "ss", (char **) keywords, &objectListJSON, &subObjectJSON)) {
         return NULL;
     }
-    retval = lodash_Find(objects, partialObject);
+    retval = lodash_Find(objectListJSON, subObjectJSON);
     if (PyErr_Occurred()) {
         if (retval != NULL) free(retval);
         return NULL;
@@ -2131,7 +2131,7 @@ static PyMethodDef _lodash_functions[] = {
     {(char *) "Slice_uint8_subslice", (PyCFunction) _wrap__lodash_Slice_uint8_subslice, METH_KEYWORDS|METH_VARARGS, "Slice_uint8_subslice(handle, st, ed)\n\ntype: handle: int64_t\ntype: st: int\ntype: ed: int" },
     {(char *) "Slice_uint8_set", (PyCFunction) _wrap__lodash_Slice_uint8_set, METH_KEYWORDS|METH_VARARGS, "Slice_uint8_set(handle, idx, value)\n\ntype: handle: int64_t\ntype: idx: int\ntype: value: uint8_t" },
     {(char *) "Slice_uint8_append", (PyCFunction) _wrap__lodash_Slice_uint8_append, METH_KEYWORDS|METH_VARARGS, "Slice_uint8_append(handle, value)\n\ntype: handle: int64_t\ntype: value: uint8_t" },
-    {(char *) "lodash_Find", (PyCFunction) _wrap__lodash_lodash_Find, METH_KEYWORDS|METH_VARARGS, "lodash_Find(objects, partialObject)\n\ntype: objects: char *\ntype: partialObject: char *" },
+    {(char *) "lodash_Find", (PyCFunction) _wrap__lodash_lodash_Find, METH_KEYWORDS|METH_VARARGS, "lodash_Find(objectListJSON, subObjectJSON)\n\ntype: objectListJSON: char *\ntype: subObjectJSON: char *" },
     {NULL, NULL, 0, NULL}
 };
 #if PY_VERSION_HEX >= 0x03000000

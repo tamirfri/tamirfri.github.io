@@ -9,14 +9,14 @@ import (
 
 var (
 	//go:embed node_modules/lodash/core.min.js
-	lodashCoreSource string
+	lodashSrc string
 )
 
-// Find the first object in `objects` that contains `partialObject`
-func Find(objects, partialObject string) (string, error) {
+// Find the first object in `objectList` that contains `subObject`
+func Find(objectListJSON, subObjectJSON string) (string, error) {
 	runner := v8.NewContext()
 	defer runner.Close()
-	if _, err := runner.RunScript(lodashCoreSource, "core.min.js"); err != nil {
+	if _, err := runner.RunScript(lodashSrc, "core.min.js"); err != nil {
 		return "", err
 	}
 	_lodash, err := runner.Global().Get("_")
@@ -27,15 +27,15 @@ func Find(objects, partialObject string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	_objects, err := v8.JSONParse(runner, objects)
+	objectList, err := v8.JSONParse(runner, objectListJSON)
 	if err != nil {
-		return "", fmt.Errorf("%w: %v", err, objects)
+		return "", fmt.Errorf("%w: %v", err, objectListJSON)
 	}
-	_partialObject, err := v8.JSONParse(runner, partialObject)
+	subObject, err := v8.JSONParse(runner, subObjectJSON)
 	if err != nil {
-		return "", fmt.Errorf("%w: %v", err, partialObject)
+		return "", fmt.Errorf("%w: %v", err, subObjectJSON)
 	}
-	result, err := lodash.MethodCall("find", _objects, _partialObject)
+	result, err := lodash.MethodCall("find", objectList, subObject)
 	if err != nil {
 		return "", err
 	}

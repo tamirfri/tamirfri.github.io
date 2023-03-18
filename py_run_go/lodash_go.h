@@ -285,7 +285,7 @@ extern unsigned char Slice_uint8_elem(long long int handle, GoInt _idx);
 extern long long int Slice_uint8_subslice(long long int handle, GoInt _st, GoInt _ed);
 extern void Slice_uint8_set(long long int handle, GoInt _idx, unsigned char _vl);
 extern void Slice_uint8_append(long long int handle, unsigned char _vl);
-extern char* lodash_Find(char* objects, char* partialObject);
+extern char* lodash_Find(char* objectListJSON, char* subObjectJSON);
 
 #ifdef __cplusplus
 }

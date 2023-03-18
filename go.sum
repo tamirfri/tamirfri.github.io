@@ -1,4 +1,6 @@
 github.com/go-python/gopy v0.4.5 h1:cwnd24UKA91vFFZoRvavb/vzBSKV99Gp3+2d5+jTG0U=
 github.com/go-python/gopy v0.4.5/go.mod h1:tlA/KcD7rM8B+NQJR4SASwiinfKY0aiMFanHszR8BZA=
+github.com/tamirfri/gopy v0.4.7 h1:JzxPLdVk+MAmdMejgfGwaAp9INbsT2ugIaT20ziKguk=
+github.com/tamirfri/gopy v0.4.7/go.mod h1:2IGOP4dB84UL9jrVI0SJ86P/FyhoepkLdnBruMH+1lk=
 rogchap.com/v8go v0.8.0 h1:/crDEiga68kOtbIqw3K9Rt9OztYz0LhAPHm2e3wK7Q4=
 rogchap.com/v8go v0.8.0/go.mod h1:MxgP3pL2MW4dpme/72QRs8sgNMmM0pRc8DPhcuLWPAs=
